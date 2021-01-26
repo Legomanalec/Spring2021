@@ -1,4 +1,4 @@
-#include <stdlib.h>
+ #include <stdlib.h>
 #include <stdio.h>
 #include "device-controller.h"
 
@@ -7,6 +7,7 @@ int queue_size = 0;
 int* queue; 
 int tail = -1;
 int head = 0;
+int writer_ready = 1;
 
 int is_full() {
 	if(queue_size == buffer_size)
@@ -39,38 +40,24 @@ int dequeue() {
 }
 
 void read_interrupt(int c) {
-	//TODO
+	if(writer_ready == 1){
+		write_device(c);
+		writer_ready = 0;
+	}		
+	else
+		enqueue(c);	
 }
 
 void write_done_interrupt() {
-	//TODO
+	writer_ready = 1;
 }
 
 int main(int argc, char* argv[]) {
 	buffer_size = atoi(argv[1]);
 	queue = malloc(buffer_size * (sizeof(int)));
-	enqueue(5);
-	enqueue(10);
-	enqueue(15);
-	enqueue(20);
-	enqueue(25);
-	enqueue(30);
-	dequeue();
-	dequeue();
-	enqueue(35);
-	enqueue(40);
-
-	for(int i = 0; i<buffer_size; i++)
-	{
-		if(tail == i)
-			printf("tail ");
-		if(head == i)
-			printf(" head ");
+	start();
+	for(int i = 0; i < 10; i++)
 		printf("%d\n", queue[i]);
-	}
-	
-
-	//start();
 	return 0;
 }
 
