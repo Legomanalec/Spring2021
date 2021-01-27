@@ -7,10 +7,9 @@ int queue_size = 0;
 int* queue; 
 int tail = -1;
 int head = 0;
-int writer_ready = 1;
 
 int is_full() {
-	if(queue_size == buffer_size)
+	if(queue_size >= buffer_size)
 		return 1;
 	return 0;
 }
@@ -40,24 +39,22 @@ int dequeue() {
 }
 
 void read_interrupt(int c) {
-	if(writer_ready == 1){
-		write_device(c);
-		writer_ready = 0;
-	}		
-	else
-		enqueue(c);	
+	enqueue(c);	
+	write_device(queue[head]);
 }
 
 void write_done_interrupt() {
-	writer_ready = 1;
+	dequeue();
+	write_device(queue[head]);
 }
 
+
 int main(int argc, char* argv[]) {
-	buffer_size = atoi(argv[1]);
+	buffer_size = atoi(argv[1]) + 1;            	//need "+ 1" to produce correct solution ¯\_(ツ)_/¯
 	queue = malloc(buffer_size * (sizeof(int)));
 	start();
-	for(int i = 0; i < 10; i++)
-		printf("%d\n", queue[i]);
 	return 0;
 }
+
+
 
