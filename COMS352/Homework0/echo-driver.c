@@ -44,7 +44,7 @@ void read_interrupt(int c) {
 }
 
 void write_done_interrupt() {
-	int c = dequeue();
+	 dequeue();
 	write_device(queue[head]);
 }
 
