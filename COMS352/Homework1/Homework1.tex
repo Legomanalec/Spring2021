@@ -1,4 +1,4 @@
-\title{Homework 1 COM S 352 }
+\title{COM S 352 Homework 1}
 \author{Alec Meyer}
 
 \date{\today}
@@ -13,11 +13,29 @@
 
 
 \section*{Question 1}
-
+Interrupts are used to inform a program or proccess
+of an external proccess, typically a physical 
+device controller telling the CPU that there has 
+been an I/O operation. A Trap, However, is an interrupt 
+triggered by software (i.e. exceptions, requests
+from other programs). Yes, traps can be generated 
+intentionally such as trying to access invalid memory
+or arithmetic exceptions.
 \section*{Question 2}
-
+The two modes of a CPU are User mode and Kernel mode.
+The system privlleges are increased when Kernal mode
+is in use because Kernal mode will allow more control
+over the system. This dual operation will help protect
+the user and the system from programs not laucnhing 
+correctly and/or being malicious. The reason to 
+distinguish the two is to know where Interrupts
+should be used. The system will produce interuppts 
+in user mode then switch to Kernel mode. Kernel mode 
+can only run privileged instructions.
 \section*{Question 3}
-
+Clear memory\\
+turn off Interrupts
+put CPU in Kernel mode
 \section*{Question 4}
 
 \section*{Question 5}

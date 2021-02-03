@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1612150143 "/Users/alecrmeyer/Desktop/Spring2021/COMS352/Homework1/Homework1.tex" "/Users/alecrmeyer/Desktop/Spring2021/COMS352/Homework1/Homework1.pdf" "Homework1" 1612150174
-  "/Users/alecrmeyer/Desktop/Spring2021/COMS352/Homework1/Homework1.aux" 1612150143 32 044b7f8fc9779af7531264e0c5c84b6d ""
-  "/Users/alecrmeyer/Desktop/Spring2021/COMS352/Homework1/Homework1.tex" 1612150174 381 6cc916fdce1baa1c5b835b465a00fbd3 ""
+["pdflatex"] 1612372223 "/Users/alecrmeyer/Desktop/Spring2021/COMS352/Homework1/Homework1.tex" "/Users/alecrmeyer/Desktop/Spring2021/COMS352/Homework1/Homework1.pdf" "Homework1" 1612372223
+  "/Users/alecrmeyer/Desktop/Spring2021/COMS352/Homework1/Homework1.aux" 1612372223 32 044b7f8fc9779af7531264e0c5c84b6d ""
+  "/Users/alecrmeyer/Desktop/Spring2021/COMS352/Homework1/Homework1.tex" 1612372222 1331 f9bd1164e47d0aec28bb790b303c1560 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -42,11 +42,11 @@
   "/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1612070147 5160756 0c9b358d94d8d050dff33fac8e57ecb7 ""
   "/usr/local/texlive/2020/texmf-var/web2c/pdftex/pdflatex.fmt" 1612070243 2569154 06874ca4b73368090a9cf0f0acceb817 ""
   "/usr/local/texlive/2020/texmf.cnf" 1586288231 577 d60164b4589a341208aff7a667fbbdcb ""
-  "Homework1.aux" 1612150143 32 044b7f8fc9779af7531264e0c5c84b6d "pdflatex"
-  "Homework1.tex" 1612150174 381 6cc916fdce1baa1c5b835b465a00fbd3 ""
+  "Homework1.aux" 1612372223 32 044b7f8fc9779af7531264e0c5c84b6d "pdflatex"
+  "Homework1.tex" 1612372222 1331 f9bd1164e47d0aec28bb790b303c1560 ""
   (generated)
+  "Homework1.log"
+  "/Users/alecrmeyer/Desktop/Spring2021/COMS352/Homework1/Homework1.pdf"
   "Homework1.aux"
   "Homework1.pdf"
   "/Users/alecrmeyer/Desktop/Spring2021/COMS352/Homework1/Homework1.log"
-  "Homework1.log"
-  "/Users/alecrmeyer/Desktop/Spring2021/COMS352/Homework1/Homework1.pdf"
