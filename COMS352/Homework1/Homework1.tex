@@ -3,10 +3,11 @@
 
 \date{\today}
 
-\documentclass[11pt]{book}
+\documentclass[11pt]{article}
+\usepackage{changepage}
 \newcommand\tab[1][1cm]{\hspace*{#1}}
 \usepackage{amssymb}
-\usepackage{listings}
+
 
 \begin{document}
 \maketitle
@@ -21,6 +22,7 @@ triggered by software (i.e. exceptions, requests
 from other programs). Yes, traps can be generated 
 intentionally such as trying to access invalid memory
 or arithmetic exceptions.
+
 \section*{Question 2}
 The two modes of a CPU are User mode and Kernel mode.
 The system privlleges are increased when Kernal mode
@@ -32,16 +34,56 @@ distinguish the two is to know where Interrupts
 should be used. The system will produce interuppts 
 in user mode then switch to Kernel mode. Kernel mode 
 can only run privileged instructions.
+
 \section*{Question 3}
 Clear memory\\
-turn off Interrupts
-put CPU in Kernel mode
+turn off Interrupts\\
+put CPU in Kernel mode\\
+Access I/O device\\
+Set value of timer
+
 \section*{Question 4}
+1,000 CPU cycles per 1 $\mu$s\\
+20 bytes every 10 $\mu$s = 20 bytes every 10,000 cycles\\
+10,000 cycles sending\\\\
+100 cycles writing to memory\\
+10,000 + 100 cycles = 10,100 total\\\\
+\( \frac{100 Transfering Cycles}
+{10,100 Total Cycles} \) = $0.99$\% $\approx 1$\%\\\\
+about 1\% of the CPU clock cycles are used to 
+transfer data from the controller to main memory.
+
 
 \section*{Question 5}
 
 \section*{Question 6}
+A DMA controller does not require the CPU to 
+interviene while writing data. This allows the 
+CPU to preform other tasks while data is being
+transfered. interrupt driven I/O requires the 
+CPU's attention and also only writes one byte at
+a time.
 
 \section*{Question 7}
+\begin{enumerate}
+\item \textbf{Parameters in Registers}\\
+simplest method, can only have as many 
+parameters as available registers. Most 
+operating systems do not use this method as 
+it only allows a few parameters of a certain
+length at a time.
+
+\item \textbf{Parameters in Block Memory}\\
+if there are more parameters than Registers
+the extra parameters will be saved to a block or 
+table of memory. Then the address is used as the 
+parameter.
+
+\item \textbf{Parameters in Stacks}\\
+similar to the block memory aproach the
+stack approach is when you push parameters on
+a stack and pop them when they are to be used.
+
+\end{enumerate}
 \end{document}
 
