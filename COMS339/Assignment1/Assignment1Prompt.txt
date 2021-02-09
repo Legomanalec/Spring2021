@@ -1,0 +1,29 @@
+Read the paper Towards an Evidence-Based 
+Understanding of Emergence of Architecture Through 
+Continuous Refactoring in Agile Software 
+Development, which is available HERE Preview the 
+document and write a reflection essay of 
+three pages at maximum--one column.  Your essay should 
+address the following questions:
+
+----Refactoring Architecture----
+How does satisfactory architecture emerge from 
+refactoring?
+
+How was satisfactory architecture shown to not 
+emerge from refactoring? Give example(s).
+
+
+
+Why is emergence of architecture through refactoring 
+is unlikely?
+
+How do project related factors impact the emergence 
+of architecture?
+
+How could bad communication impact the emergence 
+of architecture through refactoring?
+
+Each of the questions above is worth 10 points. 
+The quality of the writing (e.g. clarity) is
+worth 30 points.
