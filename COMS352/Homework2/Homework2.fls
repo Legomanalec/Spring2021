@@ -228,7 +228,11 @@ INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm1
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT /Users/alecrmeyer/Desktop/Spring2021/COMS352/Homework2/./images//COMS352HW2Q2.png
+INPUT /Users/alecrmeyer/Desktop/Spring2021/COMS352/Homework2/./images//COMS352HW2Q2.png
+INPUT /Users/alecrmeyer/Desktop/Spring2021/COMS352/Homework2/./images//COMS352HW2Q2.png
 OUTPUT /Users/alecrmeyer/Desktop/Spring2021/COMS352/Homework2/Homework2.pdf
+INPUT /Users/alecrmeyer/Desktop/Spring2021/COMS352/Homework2/./images//COMS352HW2Q2.png
 INPUT /usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT /Users/alecrmeyer/Desktop/Spring2021/COMS352/Homework2/Homework2.aux
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb

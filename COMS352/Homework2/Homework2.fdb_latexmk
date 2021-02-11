@@ -1,7 +1,8 @@
 # Fdb version 3
-["pdflatex"] 1612986435 "/Users/alecrmeyer/Desktop/Spring2021/COMS352/Homework2/Homework2.tex" "/Users/alecrmeyer/Desktop/Spring2021/COMS352/Homework2/Homework2.pdf" "Homework2" 1613001633
-  "/Users/alecrmeyer/Desktop/Spring2021/COMS352/Homework2/Homework2.aux" 1612986436 32 3985256e7290058c681f74d7a3565a19 ""
-  "/Users/alecrmeyer/Desktop/Spring2021/COMS352/Homework2/Homework2.tex" 1613001633 679 768d65846bd0fa07692d7da20cf7a841 ""
+["pdflatex"] 1613010038 "/Users/alecrmeyer/Desktop/Spring2021/COMS352/Homework2/Homework2.tex" "/Users/alecrmeyer/Desktop/Spring2021/COMS352/Homework2/Homework2.pdf" "Homework2" 1613010039
+  "./images//COMS352HW2Q2.png" 1613009833 28204 c9351cb1cc815de780cbe24167445a19 ""
+  "/Users/alecrmeyer/Desktop/Spring2021/COMS352/Homework2/Homework2.aux" 1613010039 32 044b7f8fc9779af7531264e0c5c84b6d ""
+  "/Users/alecrmeyer/Desktop/Spring2021/COMS352/Homework2/Homework2.tex" 1613010038 723 01bdf2c46a50eef50c4cafd49b0df0bd ""
   "/usr/local/texlive/2020/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -52,11 +53,12 @@
   "/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1612070147 5160756 0c9b358d94d8d050dff33fac8e57ecb7 ""
   "/usr/local/texlive/2020/texmf-var/web2c/pdftex/pdflatex.fmt" 1612070243 2569154 06874ca4b73368090a9cf0f0acceb817 ""
   "/usr/local/texlive/2020/texmf.cnf" 1586288231 577 d60164b4589a341208aff7a667fbbdcb ""
-  "Homework2.aux" 1612986436 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
-  "Homework2.tex" 1613001633 679 768d65846bd0fa07692d7da20cf7a841 ""
+  "Homework2.aux" 1613010039 32 044b7f8fc9779af7531264e0c5c84b6d "pdflatex"
+  "Homework2.tex" 1613010038 723 01bdf2c46a50eef50c4cafd49b0df0bd ""
+  "images//COMS352HW2Q2.png" 1613009833 28204 c9351cb1cc815de780cbe24167445a19 ""
   (generated)
-  "Homework2.log"
   "/Users/alecrmeyer/Desktop/Spring2021/COMS352/Homework2/Homework2.log"
-  "/Users/alecrmeyer/Desktop/Spring2021/COMS352/Homework2/Homework2.pdf"
   "Homework2.aux"
   "Homework2.pdf"
+  "/Users/alecrmeyer/Desktop/Spring2021/COMS352/Homework2/Homework2.pdf"
+  "Homework2.log"

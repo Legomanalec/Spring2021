@@ -40,5 +40,6 @@ int main() {
         close(fd2[1]);
         printf("%s", buffer);
     }
+    sleep(10000);
     return 0;
 }
