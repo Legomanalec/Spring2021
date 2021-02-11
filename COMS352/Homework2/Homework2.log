@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.1.30)  8 FEB 2021 18:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.1.30)  10 FEB 2021 13:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -154,19 +154,24 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 16.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+)
+Underfull \hbox (badness 10000) in paragraph at lines 27--31
+
+ []
+
+[1
 
 {/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (/Users/alecrmeyer/Desktop/Spring2021/COMS352/Homework2/Homework2.aux) ) 
 Here is how much of TeX's memory you used:
  2397 strings out of 479304
  32721 string characters out of 5867281
- 305768 words of memory out of 5000000
+ 306768 words of memory out of 5000000
  19587 multiletter control sequences out of 15000+600000
  409279 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  68i,6n,74p,288b,215s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on /Users/alecrmeyer/Desktop/Spring2021/COMS352/Homework2/Homework2.pdf (1 page, 37906 bytes).
+Output written on /Users/alecrmeyer/Desktop/Spring2021/COMS352/Homework2/Homework2.pdf (1 page, 46826 bytes).
 PDF statistics:
  24 PDF objects out of 1000 (max. 8388607)
  16 compressed objects within 1 object stream

@@ -14,7 +14,6 @@ How was satisfactory architecture shown to not
 emerge from refactoring? Give example(s).
 
 
-
 Why is emergence of architecture through refactoring 
 is unlikely?
 
