@@ -42,21 +42,26 @@ A: 0    \, \quad \qquad  //child\\
 B: 2606 \qquad //child\\
 C: 2606 \qquad //parent\\
 D: 2603 \qquad //parent\\
+
+\newpage
 \section*{Question 5}
-\includegraphics[scale=0.4]{COMS352HW2Q5.png}\\
-The program starts with its initializations, \emph{int fd1[2]},
-\emph{int fd2[2]}, and \emph{pid\_t pid = fork()} Then the child 
-goes into the \emph{if(pid == 0)} block where it closes a read and
-write descriptor then turns \emph{fd1[1]} into a \emph{printf} and 
-\emph{fd2[0]} into 
-a \emph{getline} using the \emph{dup2()} function. The child then
-runs the \emph{execlp()} function and the child process terminates while
-also allowing the parent to communicate between the two pipes.
-The parent goes into the \emph{else} block and closes another read
-and write then writes "Hello, Child!" to pipe 1, like mentioned before,
-the \emph{execlp("cat", "cat", NULL)} allows the parent to read the 
-message "Hello, Child!" from pipe 2 and save it in the buffer. The
-program then prints out the buffer. 
+\includegraphics[scale=0.6]{COMS352HW2Q5.png}\\
+The program will start by initializing its pipes and forks, creating
+a Parent (2603), Child (2606) and two pipes; fd1, fd2.\\
+1. The Child calls \emph{dup2(fd[1], 1)} which duplicates the file descriptor
+and redirects it to STDOUT\\
+2. The Child calls \emph{dup2(fd[0], 0)} which duplicates the file descriptor
+and redirects it to STDIN\\
+3. The Child calls \emph{execlp("cat", "cat", NULL)} which echos STDIN to 
+STDOUT\\
+4. The Child process terminates. \\
+Described above creates a path from pipe 1 all the way to pipe 2. 
+This path can be seen on the diagram represented by the red bold arrows.
+This path will allow the Parent to write to pipe 2 and read the message
+from pipe 1. Now that the parent has read the message it is stored into
+the buffer which prints "Hello, Child!".
+
+\newpage
 \section*{Question 6}
     $\delta / (\delta + \sigma)$\\\\
     System A:\\
