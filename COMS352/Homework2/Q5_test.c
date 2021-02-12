@@ -23,11 +23,12 @@ int main() {
     } 
     if (pid == 0) 
     { 
+        
         close(fd1[0]);
         close(fd2[1]);
         dup2(fd1[1], 1);
         dup2(fd2[0], 0);
-        execlp("cat", "cat", NULL);
+        //execlp("cat", "cat", NULL);
     } 
 
     else 
@@ -40,6 +41,5 @@ int main() {
         close(fd2[1]);
         printf("%s", buffer);
     }
-    sleep(10000);
     return 0;
 }
