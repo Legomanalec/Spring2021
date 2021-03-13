@@ -1,6 +1,10 @@
 Test
+alecrm4.zip
+in.txt
 main
+mainexit
 out.txt
 project
 project1-spring2021-v3.pdf
 project1-starter.c
+testOut.txt

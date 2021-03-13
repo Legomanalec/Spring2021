@@ -1,3 +1,11 @@
+/*******************************************
+This program will emulate a UNIX shell. 
+Pipes ('|'), file redirects ('<' & '>'),
+background commands ('&') and jobs are 
+implemented in this code. You can run all 
+UNIX system commands. 
+*/
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -78,59 +86,71 @@ int findSymbol(Cmd* cmd, char symbol) {
 	}
 	return -1;
 }
-
+int pidArrayIndex = 0;
+int pidArray[100];
 /* Signal handler for SIGTSTP (SIGnal - Terminal SToP),
  * which is caused by the user pressing control+z. */
 void sigtstpHandler(int sig_num) {
+
 	/* Reset handler to catch next SIGTSTP. */
 	signal(SIGTSTP, sigtstpHandler);
+	
 	if (foregroundPid > 0) {
 		/* Foward SIGTSTP to the currently running foreground process. */
+		
 		kill(foregroundPid, SIGTSTP);
-		/* TODO: Add foreground command to the list of jobs. */
+		pidArray[pidArrayIndex] = 0;
 	}
 }
 
 int processNum = 1;
 int runBackgroundCommand(Cmd *cmd){
 	int returnPid = 0;
+	int exitCode = 0;
 	cmd->pid = fork();
 	if(cmd->pid == 0){	
 		pid_t pid2 = fork();
 		if(pid2 == 0){
-			printf("[%d] %d", processNum, cmd->pid);
-			execvp(cmd->args[0], cmd->args);
+			/* sets exit code for the execution */
+			/* execvp() does not require a PATH 
+			it just needs the command and then an array
+			of arguments */
+			exitCode = execvp(cmd->args[0], cmd->args);
 		}
 		else{
 			
-			wait(NULL);
-			printf("352>");
-			printf("\n[%d] Done %s", processNum, cmd->line);
-            kill(getpid(), SIGKILL);
+			wait(NULL);//waits for child
+			if(exitCode == 0)
+				/* command exits as expected */
+				printf("\n[%d] Done %s", processNum, cmd->line);
+			else{
+				/* command exits unexpectedly */
+				printf("\n[%d] Exit %d %s", processNum, exitCode, cmd->line);
+			}
+            kill(getpid(), SIGKILL); //kills parent process once child is done
 		}
 	}
 	else{
+		/* this process goes allows the command loop to continue */
 		returnPid = cmd->pid;
-		printf("[%d]", processNum);
-		printf(" %d\n", cmd->pid);
-		fflush(stdout);	
+		printf("[%d] %d\n", processNum, cmd->pid);
+		//fflush(stdout);	
 		int status;
-		waitpid(cmd->pid, &status, WNOHANG);
+		waitpid(cmd->pid, &status, WNOHANG); //grabs child status without waiting for it
 	}
 	processNum++;
 	return returnPid;
 }
 
-char* jobsList[80];
-int jobArrayIndex = 0;
-int jobArraySize = 0;
-int pidArray[80];
 char* commandArray[80];
+int commandArrayIndex = 0;
 int main(void) {
 	/* Listen for control+z (suspend process). */
+	waitpid(foregroundPid, NULL, WUNTRACED);
 	signal(SIGTSTP, sigtstpHandler);
-
+	
 	while (1) {
+		int jobs = 0;
 		printf("352> ");
 		fflush(stdout);
 		Cmd *cmd = (Cmd*) calloc(1, sizeof(Cmd));
@@ -144,11 +164,15 @@ int main(void) {
 			exit(0);
 
 		} else if (strcmp(cmd->args[0], "jobs") == 0) {
-			for (int i = 0; i < jobArraySize; i++)
+			jobs = 1; //used to make sure 'jobs' isnt in jobs list
+			for (int i = 0; i < commandArrayIndex; i++)
 			{
 				int status;
 				int jobNum = i+1;
-				pid_t return_pid = waitpid(pidArray[i], &status, WNOHANG); /* WNOHANG def'd in wait.h */
+				/* grabs the child pid status, if it is -1 then an error occured
+				if it is 0 then the process is running, if it returns 
+				the pid than the process has stopped. */
+				pid_t return_pid = waitpid(pidArray[i], &status, WNOHANG); 
 				if (return_pid == -1) {
 					/* error */
 				} else if (return_pid == 0) {
@@ -158,17 +182,24 @@ int main(void) {
 				}
 			} 
 
-		} else if (strcmp(cmd->args[0], "bg") == 0) {			
+		} else if (strcmp(cmd->args[0], "bg") == 0) {	
+			int id = atoi(cmd->args[1]);
+			int status;
+			pid_t return_pid = waitpid(pidArray[id], &status, WNOHANG);
+			if (return_pid == 0)
+				printf("[%d] Running    %s", id, commandArray[id-1]);
+			else
+				printf("[%d] Stopped    %s", id, commandArray[id-1]);
 
 		} else {
 			if (findSymbol(cmd, BG_OP) != -1) {
-				/* TODO: Run command in background. */
 				runBackgroundCommand(cmd);
 
 			} else if(findSymbol(cmd, REDIRECT_OUT_OP) != -1) {
 				cmd->pid = fork();
+				foregroundPid = cmd->pid;
 				if(cmd->pid == 0){
-					int fd = creat(cmd->args[2] , 0644) ;
+					int fd = creat(cmd->args[2], 0644); //creates file if needed
         			dup2(fd, STDOUT_FILENO);
        				close(fd);
 					execvp(cmd->args[0], cmd->args);
@@ -179,8 +210,10 @@ int main(void) {
 
 			} else if(findSymbol(cmd, REDIRECT_IN_OP) != -1) {
 				cmd->pid = fork();
+				foregroundPid = cmd->pid;
+
 				if(cmd->pid == 0){
-					int fd = open(cmd->args[2], O_RDONLY);
+					int fd = open(cmd->args[2], O_RDONLY); //read only
         			dup2(fd, STDIN_FILENO);
         			close(fd);
 					execvp(cmd->args[0], cmd->args);
@@ -191,9 +224,11 @@ int main(void) {
 			} else if(findSymbol(cmd, PIPE_OP) != -1) {		
 				int fd[2];
 				pipe(fd);
-				cmd->pid = fork();	
+				cmd->pid = fork();
+				foregroundPid = cmd->pid;
 				if(cmd->pid == 0)
 				{
+					//descriptor logic
 					dup2(fd[0], 0);
 					close(fd[0]);
 					close(fd[1]);
@@ -214,7 +249,9 @@ int main(void) {
 				close(fd[0]);
 				wait(NULL);		
 			} else {
+
 				cmd->pid = fork();
+				foregroundPid = cmd->pid;
 				if(cmd->pid == 0){
 					execvp(cmd->args[0], cmd->args);
 				}	
@@ -224,8 +261,13 @@ int main(void) {
 				/* TODO: Run command in foreground. */
 			}
 		}	
-		/* TODO: Check on status of background processes. */
-
+		/* makes sure not to add the 'jobs' command to the 
+		jobs list */
+		if(jobs == 0){
+			foregroundPid = cmd->pid;
+			pidArray[pidArrayIndex++] = foregroundPid; //PIDs for the jobs array
+			commandArray[commandArrayIndex++] = cmd->line;
+		}
 	}
 	return 0;
 }
