@@ -16,9 +16,43 @@
 \maketitle
 
 \section*{Question 1}
+\begin{verbatim}
+monitor accessManager
+{
+    int limit = 0;
+    condition connection[];
+    void init(int n)
+    {
+        limit = n;
+        condition connection[n];
+    }
 
+    void request(int n)
+    {
+        for(int i = 0; i < n; i++)
+        {
+            if(connection[i] == OPEN)
+                wait(limit);
+        }
+    }
+
+    void release(int n)
+    {
+        for(int i = 0; i < n; i++)
+        {
+            connection[i].signal;
+        }
+    }
+}
+\end{verbatim}
 \section*{Question 2}
-
+    \textbf{r\_sem} counts the number of reading processes, 
+    while \textbf{w\_sem} counts the numer of writing processes.
+    These semaphores prevent starvation by not allowing additional
+    processes of the same type to run. For example, if there are 
+    5 writing process running and 6 reading processes waiting, 
+    these semaphores will now allow an additional writing process 
+    to run. The additional writting process will be foreced to wait.
 \section*{Question 3}
 \begin{verbatim}
     int serve, int order, int eat;
@@ -44,6 +78,7 @@
         signal(seat); 
     }
 \end{verbatim}
+\newpage
 \section*{Question 4}
 \textbf{a.}\\
 \begin{itemize}

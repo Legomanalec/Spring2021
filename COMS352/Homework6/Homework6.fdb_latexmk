@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1616428125 "/Users/alecrmeyer/Desktop/Spring2021/COMS352/Homework6/Homework6.tex" "/Users/alecrmeyer/Desktop/Spring2021/COMS352/Homework6/Homework6.pdf" "Homework6" 1616428126
-  "/Users/alecrmeyer/Desktop/Spring2021/COMS352/Homework6/Homework6.aux" 1616428125 32 ab05033ccbb38b00a31b200ccedf8001 ""
-  "/Users/alecrmeyer/Desktop/Spring2021/COMS352/Homework6/Homework6.tex" 1616428125 3202 39660c04f691a1dd3da7f535830dc5d6 ""
+["pdflatex"] 1616527623 "/Users/alecrmeyer/Desktop/Spring2021/COMS352/Homework6/Homework6.tex" "/Users/alecrmeyer/Desktop/Spring2021/COMS352/Homework6/Homework6.pdf" "Homework6" 1616527623
+  "/Users/alecrmeyer/Desktop/Spring2021/COMS352/Homework6/Homework6.aux" 1616527623 32 c81c40425fbb5e93b90fba65da0b5e61 ""
+  "/Users/alecrmeyer/Desktop/Spring2021/COMS352/Homework6/Homework6.tex" 1616527622 4143 dc7fddbe0473fb028575ba8d3acf7c30 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/jknappen/ec/tcrm1095.tfm" 1136768653 1536 02c06700a42be0f5a28664c7273f82e7 ""
@@ -66,11 +66,11 @@
   "/usr/local/texlive/2020/texmf.cnf" 1586288231 577 d60164b4589a341208aff7a667fbbdcb ""
   "COMS352HW6Q5.png" 1616425711 11011 f5d8172269e7beba188bade6ba3f7920 ""
   "COMS352HW6Q6.png" 1616426382 9647 7611cfbcf5300f97f3736a50f6398791 ""
-  "Homework6.aux" 1616428125 32 ab05033ccbb38b00a31b200ccedf8001 "pdflatex"
-  "Homework6.tex" 1616428125 3202 39660c04f691a1dd3da7f535830dc5d6 ""
+  "Homework6.aux" 1616527623 32 c81c40425fbb5e93b90fba65da0b5e61 "pdflatex"
+  "Homework6.tex" 1616527622 4143 dc7fddbe0473fb028575ba8d3acf7c30 ""
   (generated)
+  "Homework6.log"
   "Homework6.aux"
   "/Users/alecrmeyer/Desktop/Spring2021/COMS352/Homework6/Homework6.pdf"
-  "Homework6.pdf"
-  "Homework6.log"
   "/Users/alecrmeyer/Desktop/Spring2021/COMS352/Homework6/Homework6.log"
+  "Homework6.pdf"
