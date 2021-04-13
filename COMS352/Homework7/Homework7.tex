@@ -1,0 +1,95 @@
+\title{COM S 352 Homework 7}
+\author{Alec Meyer}
+
+\date{\today}
+
+\documentclass[11pt]{article}
+\usepackage{changepage}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\graphicspath{ {./images/} }
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\usepackage{amssymb}
+
+
+\begin{document}
+\maketitle
+
+\section*{Question 1}
+\begin{itemize}
+    \item \textbf{First fit}
+        $205-200=5, 170-15=155, 300-185=115, 155-75=80, 185-175=10, $
+        No where to place 90MB so it is not satisfied\\
+    \item \textbf{Best fit}
+        $205-200=5, 40-15=25, 185-185=0, 100-75=25, 300-175=125, 125-90=35$
+    \item \textbf{Worst fit}
+        $300-200=100, 205-15=190, 190-185=5, 100-75=25, 185-175=10, 100-90=10$
+\end{itemize}
+\section*{Question 2}
+\begin{itemize}
+    \item \textbf{Contiguous memory allocation}
+        The relocation register is required incase the entire
+        program needs to be relocated.
+    \item \textbf{Paging}
+        Since this scheme allocates new pages it doesn't need 
+        to relocate the program space.
+\end{itemize}
+\section*{Question 3}
+\begin{itemize}
+    \item \textbf{Contiguous memort allocation}
+        This scheme suffers from external fragmentation because as
+        address spaces become allocated holes could develop as old
+        processes finish and new ones start.
+    \item \textbf{Paging}
+        This scheme sufferes from internal fragmentation because
+        this methods allocates in pages and if a page isn't fully
+        utilized it will cause internal fragmentation.
+\end{itemize}
+\section*{Question 4}
+n = 10
+\begin{itemize}
+    \item \textbf{a.}\\
+        20,780 = 101000100101100\\
+        Page number: 10100 = 20\\
+        Offset: 0100101100 = 300
+    \item \textbf{b.}\\
+        197,018 = 110000000110011010\\
+        Page number: 11000000 = 192\\
+        Offset: 0110011010 = 410
+    \item \textbf{c.}\\
+        252,429 = 111101101000001101\\
+        Page number: 11110110 = 246\\
+        Offset: 1000001101 = 525
+    \item \textbf{d.}\\
+        1,647,822 = 110010010010011001110\\
+        Page number: 11001001001 = 1609\\
+        Offset: 0011001110 = 206
+\end{itemize}
+\section*{Question 5}
+2KB = 2048 = offset: 11
+\begin{itemize}
+    \item \textbf{a.}
+        1,018 = 01111111010\\
+        Offset: 01111111010\\
+        Page Num: 0\\
+        Frame for page 0 is 1\\
+        Physical address = 101111111010 = 3066
+    \item \textbf{b.}
+        6,976 = 1101101000000\\
+        Offest: 01101000000\\
+        Page Num: 11 = 3\\
+        Frame  for page 3 is 7\\
+        111 + 01101000000 = 15168\\
+        Physical address = 15168
+\end{itemize}
+\section*{Question 6}
+\begin{itemize}
+    \item \textbf{a.}
+        $2048 * 4KB = 2^{11} * 2^{12} = 2^{23}$\\
+        23 bits required
+    \item \textbf{b.}
+        $512 * 4KB = 2^{9} * 2^{12} = 2^{21}$\\
+        21 bits required
+    
+\end{itemize}
+\end{document}

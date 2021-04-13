@@ -1,0 +1,82 @@
+\title{COM S 352 Homework 9}
+\author{Alec Meyer}
+
+\date{\today}
+
+\documentclass[11pt]{article}
+\usepackage{changepage}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\graphicspath{ {./images/} }
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\usepackage{amssymb}
+
+
+\begin{document}
+\maketitle
+
+\section*{Question 1}
+With links to the deleted file still exsisting there could be 
+a dangling pointer. a solution to this would be to add
+a counter to the file which represents the number of references
+to a shared file, then when you add a new link increment, if
+you delete a link you decrement the counter, then the file can 
+only be deleted when it has a count of 0.
+\section*{Question 2}
+    The operating system should maintain just one table that 
+    contains references to the files that are currentky being 
+    accessed by all users. If two users are creating 
+    entries, then the operating system will need separate
+    entries for each user. 
+\section*{Question 3}
+\begin{itemize}
+    \item \textbf{Contiguous:}
+        This technique can result in internal and external 
+        fragmentation. A dynamic file size is also hard for 
+        this technique because it needs to find an open block
+        of length N and is not expecting a file to gain size. 
+    \item \textbf{Linked:}
+        Since this technique works like a linked list there is 
+        no external fragmentation. This technique is only really 
+        usable for sequential file access.
+    \item \textbf{Indexed:}
+        This technique has no issue with external fragmentation 
+        because it just points to certain clumps of memory from 
+        a central block of pointers. Only issue with this technique
+        is that it does have to hold a lot of pointers which could 
+        take up a lot of space.
+\end{itemize}
+\section*{Question 4}
+\begin{itemize}
+    \item \textbf{Contiguous:}
+        1 region
+    \item \textbf{Linked without a FAT:}
+        4 blocks
+    \item \textbf{Linked with a FAT:}
+        4 blocks
+    \item \textbf{Indexed:}
+        4 blocks
+\end{itemize}
+\section*{Question 5}
+\begin{itemize}
+    \item \textbf{a.}
+        Since memory will be utalized effectivly then we 
+        dont have to worry about a small amount of data taking
+        up an entire region. 
+    \item \textbf{b.}
+        We would just need to makre sure that when memory
+        is deallocated that the spaces are not left. 
+\end{itemize}
+
+\section*{Question 6}
+    16kb = 16384bytes\\
+    $\frac{16384}{8}=2048$\\
+    16 blocks\\
+    $16*16 = 256$ direct\\
+    $256 + 2048*16 = 33024$ single\\
+    $33024 + 2048*2048*16 = 67141888$ double\\
+    $67141888 + 2048*2048*2048*16 = 137506095360$ triple\\
+    maximum size = 137 Gb
+
+
+\end{document}
