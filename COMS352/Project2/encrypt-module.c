@@ -18,44 +18,6 @@ int input_total_count;
 int output_total_count;
 int key = 1;
 
-int main(int argc, char *argv[]){
-	char *inputFileName = argv[1];
-	char *outputFileName = argv[2];
-	init(inputFileName, outputFileName);
-	int input, output;
-	while(1){
-		printf("Input size: ");
-		scanf("%d", &input);
-		if(input <= 1){
-				printf("\nInput must be greater than 1\n");
-				continue;
-			}else{break;}
-	}
-	while(1){
-		printf("Output size: ");
-		scanf("%d", &output);
-		if(output <= 1){
-				printf("\nOutput must be greater than 1\n");
-				continue;
-			}else{break;}
-	}
-	char inputBuffer[input];
-	char outputBuffer[output];
-
-	pthread_t id[5];
-	pthread_create(&id[0], NULL, read_input, NULL);
-
-	return 0;
-}
-//TODO
-void reset_finished(){
-
-}
-//TODO
-void reset_requested(){
-
-}
-
 void clear_counts() {
 	memset(input_counts, 0, sizeof(input_counts));
 	memset(output_counts, 0, sizeof(output_counts));
@@ -76,7 +38,7 @@ void *random_reset() {
 void init(char *inputFileName, char *outputFileName) {
 	pthread_t pid;
 	srand(time(0));
-	pthread_create(&pid, NULL, &random_reset, NULL);
+	//pthread_create(&pid, NULL, &random_reset, NULL);
 	input_file = fopen(inputFileName, "r");
 	output_file = fopen(outputFileName, "w");
 }
