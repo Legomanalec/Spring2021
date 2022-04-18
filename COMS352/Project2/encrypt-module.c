@@ -38,7 +38,7 @@ void *random_reset() {
 void init(char *inputFileName, char *outputFileName) {
 	pthread_t pid;
 	srand(time(0));
-	//pthread_create(&pid, NULL, &random_reset, NULL);
+	pthread_create(&pid, NULL, &random_reset, NULL);
 	input_file = fopen(inputFileName, "r");
 	output_file = fopen(outputFileName, "w");
 }
